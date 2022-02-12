@@ -1,5 +1,4 @@
 class ListsController < ApplicationController
-  # before_action :find_list, only: [:show]
 
   def index
     @lists = List.all
@@ -28,7 +27,4 @@ class ListsController < ApplicationController
     params.require(:list).permit(:name)
   end
 
-  # def find_list
-  #   @list = List.find(param[:id])
-  # end
 end
