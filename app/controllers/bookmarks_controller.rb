@@ -24,12 +24,12 @@ class BookmarksController < ApplicationController
 
   private
 
+    def bookmark_params
+      params.require(:bookmark).permit(:comment, :movie_id)
+    end
+
   def find_list
     @list = List.find(params[:list_id])
-  end
-
-  def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id)
   end
 
 end
